@@ -8,6 +8,8 @@
                 if (jenkins == null) {
                     throw new IOException("Jenkins instance is not ready");
                 }
+
+                jenkins.checkPermission(Jenkins.ADMINISTER);
                 
                 if (!useSMTPAuth) {
                     smtpAuthUserName = null;
